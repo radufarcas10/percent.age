@@ -1,0 +1,26 @@
+{
+  "name": "percentage",
+  "version": "0.1.0",
+  "description": "Nice and simple percentage calculator PWA, with full offline capabilities",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radufarcas10/percent.age.git"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "javascript",
+    "PWA",
+    "offline"
+  ],
+  "author": "Radu Farcas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/radufarcas10/percent.age/issues"
+  },
+  "homepage": "https://github.com/radufarcas10/percent.age#readme"
+}

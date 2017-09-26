@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Percentage Calculator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+  <body>
+    <div>
+      <div class="header">
+        <h1>Percentage Calculator</h1>
+        <h5>Percentage calculator which works offline. You can add it to your homescreen and use it like a native app</h5>
+      </div>
+      <div class="container">
+        <form name="whatIsPercentOf">
+          <fieldset>
+            <span>What is</span>
+            <input type="number" name="a">
+            <span>% of</span>
+            <input type="number" name="b">
+            <span>?</span>
+            <button type="button" id="whatIsPercentOf">Calculate</button>
+            <p id="result-one"></p>
+          </fieldset>
+        </form>
+        <form name="isPercentOf">
+          <fieldset>
+            <input type="number" name="c">
+            <span>% of</span>
+            <input type="number" name="d">
+            <span>=</span>
+            <button type="button" id="isPercentOf">Calculate</button>
+            <p id="result-two"></p>
+          </fieldset>
+        </form>
+        <form name="isWhatPercent">
+          <fieldset>
+            <input type="number" name="e">
+            <span>is what % of</span>
+            <input type="number" name="f">
+            <span>?</span>
+            <button type="button" id="isWhatPercent">Calculate</button>
+            <p id="result-three"></p>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    <script type="text/javascript" src="scripts/calculator.js"></script>
+  </body>
+</html>
