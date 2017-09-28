@@ -48,5 +48,5 @@ function calcIsPercentOfWhat() {
 
 		if (!a || !b) return;
 
-	result.innerText = (c % 2 === 0) c : c.toFixed(2);
+	result.innerText = (c % 2 === 0) ? c : c.toFixed(2);
 }
