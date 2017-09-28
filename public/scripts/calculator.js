@@ -1,20 +1,8 @@
-/*****************************************************************************
-   *
-   * Register Service Worker
-   *
-   ****************************************************************************/
-
 if ('serviceWorker' in navigator) {
 	navigator.serviceWorker
 				   .register('./service-worker.js')
 				   .then(function() { console.log('[ServiceWorker] Registered'); });
 }
-
-/*****************************************************************************
-   *
-   * Event listeners for UI elements
-   *
-   ****************************************************************************/
 
 setEventHandlers();
 
@@ -30,12 +18,6 @@ function setEventHandlers() {
 	});
 }
 
-/*****************************************************************************
-   *
-   * Function that calculates what is x% of y (first form)
-   *
-   ****************************************************************************/
-
 function calcWhatIsPercentOf() {
 	let a = document.forms.whatIsPercentOf.a.value/100,
 		b = a*document.forms.whatIsPercentOf.b.value,
@@ -43,14 +25,8 @@ function calcWhatIsPercentOf() {
 
 		if (!a || !b) return;
 
-	result.innerText = b;
+	result.innerText = (b % 2 === 0) ? b : b.toFixed(2);
 }
-
-/*****************************************************************************
-   *
-   * Function that calculates x% of y = ? (second form)
-   *
-   ****************************************************************************/
 
 function calcIsWhatPercentOf() {
 	let a = document.forms.isWhatPercentOf.c.value,
@@ -61,7 +37,7 @@ function calcIsWhatPercentOf() {
 
 	if (!a || !b) return;
 
-	result.innerText = d;
+	result.innerText = (d % 2 ===0) ? d : d.toFixed(2) + '%';
 }
 
 function calcIsPercentOfWhat() {
@@ -72,5 +48,5 @@ function calcIsPercentOfWhat() {
 
 		if (!a || !b) return;
 
-	result.innerText = c;
+	result.innerText = (c % 2 === 0) c : c.toFixed(2);
 }

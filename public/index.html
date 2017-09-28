@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Percentage Calculator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#3C3AED" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="manifest" href="/manifest.json">
+  </head>
+  <body>
+    <div>
+      <div class="header">
+        <h1>Percentage Calculator</h1>
+        <h5>Percentage calculator which works offline. You can add it to your homescreen and use it like a native app</h5>
+      </div>
+      <div class="container">
+        <form name="whatIsPercentOf" autocomplete="off">
+          <fieldset>
+            <div class="content">
+              <span>What is</span>
+              <input type="number" name="a">
+              <span>% of</span>
+              <input type="number" name="b">
+              <span>?</span>
+            </div>
+            <div class="content">
+              <button type="button" id="whatIsPercentOf">Calculate %</button>
+              <span id="result-one"></span>
+            </div>
+          </fieldset>
+        </form>
+        <form name="isWhatPercentOf" autocomplete="off">
+          <fieldset>
+            <div class="content">
+              <input type="number" name="c">
+              <span> is what % of</span>
+              <input type="number" name="d">
+              <span>?</span>
+            </div>
+            <div class="content">
+              <button type="button" id="isWhatPercentOf">Calculate %</button>
+              <span id="result-two"></span>
+            </div>
+          </fieldset>
+        </form>
+        <form name="isPercentOfWhat" autocomplete="off">
+          <fieldset>
+            <div class="content">
+              <input type="number" name="e">
+              <span>is</span>
+              <input type="number" name="f">
+              <span>% of what ?</span>
+            </div>
+            <div class="content">
+              <button type="button" id="isPercentOfWhat">Calculate %</button>
+              <span id="result-three"></span>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    <script type="text/javascript" src="scripts/calculator.js"></script>
+  </body>
+</html>
