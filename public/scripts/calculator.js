@@ -1,6 +1,8 @@
-import registerServiceWorker from './utils.js';
-
-registerServiceWorker();
+if ('serviceWorker' in navigator) {
+	navigator.serviceWorker
+				   .register('./service-worker.js')
+				   .then(function() { console.log('[ServiceWorker] Registered'); });
+}
 
 setEventHandlers();
 
