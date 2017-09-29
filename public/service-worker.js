@@ -1,4 +1,4 @@
-var staticCacheName = 'percentage-static-v6'; // !!change the cache version if you change anything in a file
+var staticCacheName = 'percentage-static-v7'; // !!change the cache version if you change anything in a file
 var filesToCache = [
 	'/',
 	'/index.html',
