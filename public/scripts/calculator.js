@@ -1,4 +1,4 @@
-import registerServiceWorker from 'utils.js';
+import registerServiceWorker from './utils.js';
 
 registerServiceWorker();
 
