@@ -57,7 +57,7 @@ input[type="number"] {
   margin: 0 10px;
   font-size: 16px;
   background: transparent;
-  border-bottom: 1px solid #C7C8D0;
+  border-bottom: 1px solid #eaeaea;
   transition: all ease 0.3s;
 }
 
@@ -72,18 +72,16 @@ button {
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #fff;
-  background-color: #3C3AED;
-  border: 0;
-  border-radius: 20px;
-  box-shadow: 3px 4px 15px 0px #c3c3c3;
-  transition: box-shadow ease 0.3s;
+  color: #3C3AED;
+  background-color: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 3px;
+  transition: all ease 0.3s;
 }
 
 button:focus {
   outline: none;
-  box-shadow: inset 2px 3px 25px 1px #9998ff;
-  box-shadow: 3px 4px 15px 0px #c3c3c3;
+  border: 1px solid #3C3AED;
 }
 
 button:after {
@@ -116,13 +114,9 @@ button:focus:after {
   visibility: visible;
 }
 
-img {
-  position: absolute;
-}
-
 .header {
   height: 200px;
-  background: linear-gradient(to right, #459ffb 0%,#007eff 44%,#3C3AED 100%);
+  background: linear-gradient(to right, #2e94fd 0%,#007eff 44%,#3C3AED 100%);
 }
 
 .container {
@@ -145,6 +139,22 @@ img {
 #result-one, #result-two, #result-three {
   font-size: 24px;
   font-weight: 600;
+}
+
+.footer {
+  position: absolute;
+  text-align: center;
+  margin: 5px;
+  bottom: 0;
+  left: 50%;
+  font-size: 12px;
+  color: #dadada;
+  transform: translate(-50%, 0);
+}
+
+a {
+  text-decoration: none;
+  color: #eaeaea;
 }
 
 @keyframes ripple {
