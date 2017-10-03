@@ -26,7 +26,8 @@ h1:after {
   top: 100%;
   left: 50%;
   width: 70px;
-  border: 1px solid #fff;
+  height: 1px;
+  border-top: 1px solid #eaeaea;
   transform: translate(-50%, -50%);
 }
 
@@ -87,36 +88,6 @@ button:focus {
   border: 1px solid #3C3AED;
 }
 
-button:after {
-  content: '';
-  display: block;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 120px;
-  height: 120px;
-  margin-left: -60px;
-  margin-top: -60px;
-  background: #fff;
-  border-radius: 100%;
-  opacity: .6;
-
-  transform: scale(0);
-}
-
-button:not(:active):after {
-  animation: ripple 0.8s ease-out;
-}
-
-/* fixes initial animation run, without user input, on page load */
-button:after {
-  visibility: hidden;
-}
-
-button:focus:after {
-  visibility: visible;
-}
-
 .header {
   height: 200px;
   background: linear-gradient(to right, #2e94fd 0%,#007eff 44%,#3C3AED 100%);
@@ -157,12 +128,8 @@ a {
 }
 
 @keyframes ripple {
-  0% {
-    transform: scale(0);
-  }
-  20% {
-    transform: scale(1);
-  }
+  0% { transform: scale(0); }
+  20% { transform: scale(1); }
   100% {
     opacity: 0;
     transform: scale(1);

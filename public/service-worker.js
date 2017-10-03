@@ -1,9 +1,9 @@
-var staticCacheName = 'percentage-static-v11'; // !!change the cache version if you change anything in a file
+var staticCacheName = 'percentage-static-v12'; // !!change the cache version if you change anything in a file
 var filesToCache = [
 	'/',
 	'/index.html',
-	'/scripts/calculator.js',
-	'/styles/main.css'
+	'/scripts/calculator.min.js',
+	'/styles/main.min.css'
 ];
 
 self.addEventListener('install', function(e) {
