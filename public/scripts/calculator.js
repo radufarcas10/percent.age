@@ -1,8 +1,3 @@
-if ('serviceWorker' in navigator) {
-	navigator.serviceWorker
-				   .register('./service-worker.js')
-				   .then(function() { console.log('[ServiceWorker] Registered'); });
-}
 
 setEventHandlers = () => {
   document.getElementById('whatIsPercentOf').addEventListener('click', function() {

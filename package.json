@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/radufarcas10/percent.age/issues"
   },
-  "homepage": "https://github.com/radufarcas10/percent.age#readme"
+  "homepage": "https://github.com/radufarcas10/percent.age#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
 }
