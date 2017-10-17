@@ -1,12 +1,12 @@
 
 setEventHandlers = () => {
-  document.getElementById('whatIsPercentOf').addEventListener('click', function() {
+  document.getElementById('whatIsPercentOf').addEventListener('click', () => {
     calcWhatIsPercentOf();
   });
-  document.getElementById('isWhatPercentOf').addEventListener('click', function() {
+  document.getElementById('isWhatPercentOf').addEventListener('click', () => {
     calcIsWhatPercentOf();
   });
-  document.getElementById('isPercentOfWhat').addEventListener('click', function() {
+  document.getElementById('isPercentOfWhat').addEventListener('click', () => {
     calcIsPercentOfWhat();
   });
 }
