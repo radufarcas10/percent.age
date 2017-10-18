@@ -1,3 +1,16 @@
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker
+           .register('./service-worker.js')
+           .then(function(reg) {
+              if(reg.installing) {
+                console.log('Service Worker installing');
+              } else if (reg.waiting) {
+                console.log('Service Worker installed');
+              } else if (reg.active) {
+                console.log('Service Worker active');
+              }
+           });
+}
 
 setEventHandlers = () => {
   document.getElementById('whatIsPercentOf').addEventListener('click', () => {
