@@ -1,17 +1,25 @@
 if ('serviceWorker' in navigator) {
 	navigator.serviceWorker
 				   .register('./service-worker.js')
-				   .then(function() { console.log('[ServiceWorker] Registered'); });
+				   .then((reg) => {
+              if (reg.installing) {
+                console.log('[ServiceWorker] Installing');
+              } else if (reg.waiting) {
+                console.log('[ServiceWorker] Installed');
+              } else if (reg.active) {
+                console.log('[ServiceWorker] Active');
+              }
+           });
 }
 
 setEventHandlers = () => {
-  document.getElementById('whatIsPercentOf').addEventListener('click', function() {
+  document.getElementById('whatIsPercentOf').addEventListener('click', () => {
     calcWhatIsPercentOf();
   });
-  document.getElementById('isWhatPercentOf').addEventListener('click', function() {
+  document.getElementById('isWhatPercentOf').addEventListener('click', () => {
     calcIsWhatPercentOf();
   });
-  document.getElementById('isPercentOfWhat').addEventListener('click', function() {
+  document.getElementById('isPercentOfWhat').addEventListener('click', () => {
     calcIsPercentOfWhat();
   });
 }
