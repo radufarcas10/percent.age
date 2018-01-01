@@ -6,14 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="theme-color" content="#3C3AED" />
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-    <link rel="stylesheet" href="styles/main.min.css">
     <link rel="manifest" href="/manifest.json">
+    <style type="text/css">
+      .wrapper,body{width:100%;height:100%}.wrapper,body,html{height:100%}body,h1{margin:0}.footer,h1{text-align:center}body{padding:0;font-family:"Segoe UI",Arial,Helvetica,Sans Serif;min-height:100%}.wrapper{animation:1s ease-out 0s 1 fadeIn}h1{opacity:0;animation-name:bounceIn;animation-duration:450ms;animation-timing-function:linear;animation-fill-mode:forwards;padding:20px 0;font-size:14px;font-weight:100;position:relative;color:#fff}h1:after{content:'';position:absolute;top:100%;left:50%;width:70px;height:1px;border-top:1px solid #eaeaea;transform:translate(-50%,-50%)}ul{display:flex;justify-content:space-evenly;padding:10px 0}li{color:#eaeaea;font-size:10px;list-style-type:none}.header{height:200px;background:linear-gradient(to right,#0053a9 0,#006ddc 44%,#3C3AED 100%)}.footer{margin:5px;font-size:12px;color:#dadada}a{text-decoration:none;color:#eaeaea}@keyframes slideInFromRight{0%{transform:translateX(100%)}100%{transform:translateX(0)}}@keyframes ripple{0%{transform:scale(0)}20%{transform:scale(1)}100%{opacity:0;transform:scale(1)}}@keyframes bounceIn{0%{opacity:0;transform:scale(.3) translate3d(0,0,0)}50%{opacity:.9;transform:scale(1.1)}80%{opacity:1;transform:scale(.89)}100%{opacity:1;transform:scale(1) translate3d(0,0,0)}}
+    </style>
+    <link rel="preload" href="styles/main.min.css" as="style">
+    <link rel="stylesheet" href="styles/main.min.css">
   </head>
   <body>
-    <div>
+    <div class="wrapper">
       <div class="header">
-        <h1>Percentage Calculator</h1>
-        <h5>Percentage calculator which works offline. You can add it to your homescreen and use it like a native app</h5>
+        <h1>PERCENTAGE CALCULATOR</h1>
+        <ul>
+          <li>WORKS OFFLINE</li>
+          <li>ADD TO HOMESCREEN</li>
+        </ul>
       </div>
       <div class="container">
         <form name="whatIsPercentOf" autocomplete="off">
@@ -27,6 +34,7 @@
             </div>
             <div class="content">
               <button type="button" id="whatIsPercentOf">Calculate %</button>
+              <!-- <div class="loader">Loading...</div> -->
               <span id="result-one"></span>
             </div>
           </fieldset>
