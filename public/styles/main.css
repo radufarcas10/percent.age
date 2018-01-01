@@ -12,14 +12,13 @@ body {
 }
 
 .wrapper {
-  animation: 1s ease-out 0s 1 fadeIn;
   width: 100%;
   height: 100%;
 }
 
 h1 {
   opacity: 0;
-  animation-name: bounceIn;
+  animation-name: fadeIn;
   animation-duration: 450ms;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
@@ -33,6 +32,7 @@ h1 {
 }
 
 h1:after {
+  opacity: 1;
   content: '';
   position: absolute;
   top: 100%;
@@ -61,6 +61,7 @@ form {
   animation-duration: 450ms;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
+  animation-delay: 0.6s;
   display: flex;
   height: 120px;
   background-color: #fff;
@@ -70,8 +71,8 @@ form {
   box-shadow: 0 3px 7px rgba(0,0,0,0.15);
 }
 
-form:nth-child(2) { animation-delay: 0.1s; }
-form:nth-child(3) { animation-delay: 0.2s; }
+form:nth-child(2) { animation-delay: 0.75s; }
+form:nth-child(3) { animation-delay: 0.9s; }
 
 fieldset {
   border: 0;
@@ -221,7 +222,16 @@ a {
 /*loader end*/
 
 
-/*@keyframes slideInFromRight {
+/*@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
   0% {
     transform: translateX(100%);
   }
@@ -256,4 +266,5 @@ a {
     opacity: 1;
     transform: scale(1) translate3d(0,0,0);
   }
-}*/
+}
+*/

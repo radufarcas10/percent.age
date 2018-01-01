@@ -1,7 +1,7 @@
 if ('serviceWorker' in navigator) {
 	navigator.serviceWorker
 				   .register('./service-worker.js')
-				   .then((reg) => {
+				   .then(reg => {
               if (reg.installing) {
                 console.log('[ServiceWorker] Installing');
               } else if (reg.waiting) {
@@ -45,7 +45,7 @@ calcIsWhatPercentOf = () => {
 
 	if (!a || !b) return;
 
-	result.innerText = (d % 2 ===0) ? d + '%' : d.toFixed(2) + '%';
+	result.innerText = (d % 2 === 0) ? d + '%' : d.toFixed(2) + '%';
 }
 
 calcIsPercentOfWhat = () => {

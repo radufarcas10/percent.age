@@ -1,4 +1,4 @@
-var staticCacheName = 'percentage-static-v14'; // !!change the cache version if you change anything in a file
+var staticCacheName = 'percentage-static-v15'; // !!change the cache version if you change anything in a file
 var filesToCache = [
   '/',
   '/index.html',
@@ -6,19 +6,19 @@ var filesToCache = [
   '/styles/main.min.css'
 ];
 
-self.addEventListener('install', function(e) {
+self.addEventListener('install', e => {
   e.waitUntil(
-      caches.open(staticCacheName).then(function(cache) {
+      caches.open(staticCacheName).then(cache => {
         return cache.addAll(filesToCache);
       })
     );
 });
 
-self.addEventListener('activate', function(e) {
+self.addEventListener('activate', e => {
   e.waitUntil(
-      caches.keys().then(function(cacheNames) {
+      caches.keys().then(cacheNames => {
         return Promise.all(
-            cacheNames.map(function(cacheName) {
+            cacheNames.map(cacheName => {
               if (staticCacheName.indexOf(cacheName) === -1) {
                 return caches.delete(cacheName);
               }
@@ -28,9 +28,9 @@ self.addEventListener('activate', function(e) {
     );
 });
 
-self.addEventListener('fetch', function(e) {
+self.addEventListener('fetch', e => {
   e.respondWith(
-    caches.match(e.request).then(function(response) {
+    caches.match(e.request).then(response => {
       return response || fetch(e.request);
     })
   );
