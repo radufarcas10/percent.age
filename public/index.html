@@ -14,32 +14,36 @@
     <style type="text/css">
       .wrapper,body{width:100%;height:100%}.wrapper,body,html{height:100%}body,h1{margin:0}.footer,h1{text-align:center}body{padding:0;font-family:"Segoe UI",Arial,Helvetica,Sans Serif;min-height:100%}h1{opacity:0;animation-name:fadeIn;animation-duration:250ms;animation-timing-function:linear;animation-fill-mode:forwards;padding:20px 0;font-size:14px;font-weight:100;position:relative;color:#fff}h1:after{opacity:1;content:'';position:absolute;top:100%;left:50%;width:70px;height:1px;border-top:1px solid #eaeaea;transform:translate(-50%,-50%)}ul{display:flex;justify-content:space-evenly;padding:10px 0}li{color:#eaeaea;font-size:10px;list-style-type:none}.header{height:200px;background:linear-gradient(to right,#0053a9 0,#006ddc 44%,#3C3AED 100%)}.footer{margin:5px;font-size:12px;color:#dadada}a{text-decoration:none;color:#eaeaea}@keyframes fadeIn{from{opacity:0}to{opacity:1}}@keyframes slideInFromRight{0%{transform:translateX(100%)}100%{transform:translateX(0)}}@keyframes ripple{0%{transform:scale(0)}20%{transform:scale(1)}100%{opacity:0;transform:scale(1)}}@keyframes bounceIn{0%{opacity:0;transform:scale(.3) translate3d(0,0,0)}50%{opacity:.9;transform:scale(1.1)}80%{opacity:1;transform:scale(.89)}100%{opacity:1;transform:scale(1) translate3d(0,0,0)}}
     </style>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js'></script>
     <link rel="preload" href="styles/main.min.css" as="style">
     <link rel="stylesheet" href="styles/main.min.css">
   </head>
   <body>
     <div>
       <div class="header">
-        <h1>PERCENTAGE CALCULATOR</h1>
+        <h1 data-bind='text: title'></h1>
         <ul>
-          <li>WORKS OFFLINE</li>
-          <li>ADD TO HOMESCREEN</li>
+          <li data-bind="text: offline"></li>
+          <li data-bind="text: homescreen"></li>
         </ul>
       </div>
       <div class="container">
         <form name="whatIsPercentOf" autocomplete="off">
           <fieldset>
             <div class="content">
-              <span>What is</span>
-              <input type="number" name="a">
-              <span>% of</span>
-              <input type="number" name="b">
-              <span>?</span>
+              <span data-bind='text: description()[0].what'></span>
+              <input type="number" name="a" data-bind='textInput: initialValue'>
+              <span data-bind='text: description()[0].percent'></span>
+              <input type="number" name="b" data-bind='value: percentageValue'>
+              <span data-bind='text: description()[0].qMark'></span>
             </div>
             <div class="content">
-              <button type="button" id="whatIsPercentOf">Calculate %</button>
+              <button type="button" id="whatIsPercentOf" data-bind='click: calcWhatIsPercentOf'>Calculate %</button>
               <!-- <div class="loader">Loading...</div> -->
-              <span id="result-one"></span>
+              <div data-bind='text: initialValue'>
+
+              </div>
+              <span id="result-one" data-bind='visible: calcWhatIsPercentOf() > 0'></span>
             </div>
           </fieldset>
         </form>
@@ -47,13 +51,13 @@
           <fieldset>
             <div class="content">
               <input type="number" name="c">
-              <span> is what % of</span>
+              <span data-bind='text: description()[1].what'></span>
               <input type="number" name="d">
-              <span>?</span>
+              <span data-bind='text: description()[1].qMark'></span>
             </div>
             <div class="content">
               <button type="button" id="isWhatPercentOf">Calculate %</button>
-              <span id="result-two"></span>
+              <span id="result-two" data-bind='visible: calcWhatIsPercentOf() > 0'></span>
             </div>
           </fieldset>
         </form>
@@ -61,9 +65,9 @@
           <fieldset>
             <div class="content">
               <input type="number" name="e">
-              <span>is</span>
+              <span data-bind='text: description()[2].what'></span>
               <input type="number" name="f">
-              <span>% of what ?</span>
+              <span data-bind='text: description()[2].percent'></span>
             </div>
             <div class="content">
               <button type="button" id="isPercentOfWhat">Calculate %</button>
@@ -73,9 +77,10 @@
         </form>
       </div>
       <div class="footer">
-        <span>&copy; 2017 <a href="mailto:f.radu10@yahoo.com">Radu Farcas</a></span>
+        <span>&copy; 2017 <a data-bind='text: author' href="mailto:f.radu10@yahoo.com"></a></span>
       </div>
     </div>
-    <script type="text/javascript" src="scripts/calculator.min.js" async></script>
+    <!-- <script type="text/javascript" src="scripts/calculator.min.js" async></script> -->
+    <script type='text/javascript' src ='scripts/percent-age.js'></script>
   </body>
 </html>
