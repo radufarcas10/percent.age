@@ -1,15 +1,23 @@
 if ('serviceWorker' in navigator) {
+	let isUpdate = false;
 	navigator.serviceWorker
 				   .register('./service-worker.js')
 				   .then(reg => {
-              if (reg.installing) {
-                console.log('[ServiceWorker] Installing');
-              } else if (reg.waiting) {
-                console.log('[ServiceWorker] Installed');
-              } else if (reg.active) {
-                console.log('[ServiceWorker] Active');
-              }
-           });
+						if (reg.installing) {
+							console.log('[ServiceWorker] Installing');
+						} else if (reg.waiting) {
+							console.log('[ServiceWorker] Installed');
+						} else if (reg.active) {
+							isUpdate = true;
+							console.log(`[ServiceWorker] Active
+							This app now works offline`);
+							if (isUpdate) {
+								console.log('There is an sw waiting to activate');
+							} else {
+								showToast();
+							}
+						}
+					});
 }
 
 setEventHandlers = () => {
@@ -25,6 +33,16 @@ setEventHandlers = () => {
 }
 
 setEventHandlers();
+
+showToast = () => {
+	// Get the snackbar DIV
+	const toast = document.getElementById("snackbar");
+	// Add the "show" class to DIV
+	toast.className = "show";
+
+	// After 3 seconds, remove the show class from DIV
+	setTimeout(function(){ toast.className = toast.className.replace("show", "hide"); }, 3000);
+}
 
 calcWhatIsPercentOf = () => {
 	let a = document.forms.whatIsPercentOf.a.value/100,
