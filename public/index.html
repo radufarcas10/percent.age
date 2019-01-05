@@ -28,46 +28,46 @@
         </ul>
       </div>
       <div class="container">
-        <form name="whatIsPercentOf" autocomplete="off">
+        <form name="whatIsPercentOf" autocomplete="off" onsubmit="return false">
           <fieldset>
             <div class="content">
-              <span>What is</span>
-              <input type="number" name="a">
-              <span>% of</span>
-              <input type="number" name="b">
-              <span>?</span>
+              <label for="a">What is</label>
+              <input type="number" name="a" required>
+              <label for="b">% of</label>
+              <input type="number" name="b" required>
+              <label>?</label>
             </div>
             <div class="content">
-              <button type="button" id="whatIsPercentOf">Calculate %</button>
+              <button type="submit" id="whatIsPercentOf">Calculate %</button>
               <!-- <div class="loader">Loading...</div> -->
               <span id="result-one"></span>
             </div>
           </fieldset>
         </form>
-        <form name="isWhatPercentOf" autocomplete="off">
+        <form name="isWhatPercentOf" autocomplete="off" onsubmit="return false">
           <fieldset>
             <div class="content">
-              <input type="number" name="c">
-              <span> is what % of</span>
-              <input type="number" name="d">
-              <span>?</span>
+              <input type="number" name="c" required>
+              <label for="c"> is what % of</label>
+              <input type="number" name="d" required>
+              <label for="d">?</label>
             </div>
             <div class="content">
-              <button type="button" id="isWhatPercentOf">Calculate %</button>
+              <button type="submit" id="isWhatPercentOf">Calculate %</button>
               <span id="result-two"></span>
             </div>
           </fieldset>
         </form>
-        <form name="isPercentOfWhat" autocomplete="off">
+        <form name="isPercentOfWhat" autocomplete="off" onsubmit="return false">
           <fieldset>
             <div class="content">
-              <input type="number" name="e">
-              <span>is</span>
-              <input type="number" name="f">
-              <span>% of what ?</span>
+              <input type="number" name="e" required>
+              <label for="e">is</label>
+              <input type="number" name="f" required>
+              <label for="f">% of what ?</label>
             </div>
             <div class="content">
-              <button type="button" id="isPercentOfWhat">Calculate %</button>
+              <button type="submit" id="isPercentOfWhat">Calculate %</button>
               <span id="result-three"></span>
             </div>
           </fieldset>
